@@ -1,0 +1,53 @@
+<h1>Formulário</h1>
+
+<form method="POST">
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="name">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin"> Admin <!--O radio é o tipo das bolinhas pra marca a opção, e o value vai ser
+        aquilo que vai pro backend-->
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+
+    <select name="estado">
+        <option value="">Selecione</option> <!-- essa é a tag select, usada no momento que temos que escolher entre varias opções
+    e podemos ver tmb que todas as opções tem valor. (Mesmo selecione que não tem já que é so por estetica)
+    esses valores vão ser aquilo que sera enviado pro Backend-->
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+<!--Aqui usamos o select dnv, mas add o multiple size, oque faz ele ter uma aparencia mas semelhante a uma lista(só olhar
+no browser se não entender a descrição)-->
+    <select name="interesses" multiple size="7"> 
+        <option value="js">Javascript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+    </select>
+
+    <button formaction="http://localhost:3003/nomes">Incluir</button>
+    <button formaction="http://localhost:3003/nomes/3">Alterar</button>
+</form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>
